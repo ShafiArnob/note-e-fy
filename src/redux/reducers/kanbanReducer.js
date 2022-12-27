@@ -1,16 +1,23 @@
-import { LOAD_KANBAN } from "../actionTypes/actionTypes"
+import { LOAD_PAGES } from "../actionTypes/actionTypes"
 
 export const initialState = {
-  test:"test"
+  kanban:[
+    {
+      id:"",
+      username:"",
+      title:"",
+      kanban:[]
+    }
+  ],
+  note:[]
 }
 
 export const kanbanReducer = (state=initialState, action) => {
-  // switch(action.type){
-  //   case LOAD_KANBAN:
-  //     return {...state}
+  switch(action.type){
+    case LOAD_PAGES:
+      return {...state, kanban:action.payload }
     
-  //   default:
-  //     return state
-  // }
-  return state
+    default:
+      return state
+  }
 }

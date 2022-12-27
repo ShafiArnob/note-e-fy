@@ -1,1 +1,1 @@
-export const LOAD_KANBAN = "LOAD_KANBAN"
+export const LOAD_PAGES = "LOAD_PAGES"
