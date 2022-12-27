@@ -1,0 +1,1 @@
+export const LOAD_KANBAN = "LOAD_KANBAN"
