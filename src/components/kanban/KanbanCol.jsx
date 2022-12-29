@@ -1,10 +1,11 @@
 import React from 'react'
 import KanbanRow from './KanbanRow'
 
-const KanbanCol = ({section}) => {
-  console.log(section);
+const KanbanCol = ({section,provided}) => {
+  // console.log(section);
   return (
-    <div className='w-1/4 bg-[#383838] p-6 rounded-lg ml-4'>
+    <div className='w-1/4 bg-[#383838] p-6 rounded-lg ml-4' {...provided.droppableProps} ref={provided.innerRef}>
+      
       {/* Kanban Column title */}
       <div className='text-lg font-semibold mb-4'>
         {section.title}
@@ -12,8 +13,10 @@ const KanbanCol = ({section}) => {
 
       {/* kanban row tasks */}
       <div>
-        {section.tasks.map(task=>(<KanbanRow key={task.id} task={task}></KanbanRow>))}
+        {section.tasks.map((task, index)=>(<KanbanRow key={task.id} task={task} index={index}></KanbanRow>))}
+        {provided.placeholder}
       </div>
+
     </div>
   )
 }
