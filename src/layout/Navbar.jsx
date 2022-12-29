@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="bg-neutral-900 p-4 flex justify-between items-center">
       <Link to="/" className="text-white font-bold text-2xl">
-        note.e.fy
+        note<span className="mx-0.5">·​</span>​e<span className="mx-0.5">·​</span>​fy
       </Link>
 
       <div className="flex items-center">

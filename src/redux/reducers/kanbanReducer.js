@@ -1,7 +1,7 @@
 import { LOAD_PAGES } from "../actionTypes/actionTypes"
 
 export const initialState = {
-  kanban:[
+  pages:[
     {
       id:"",
       username:"",
@@ -15,7 +15,7 @@ export const initialState = {
 export const kanbanReducer = (state=initialState, action) => {
   switch(action.type){
     case LOAD_PAGES:
-      return {...state, kanban:action.payload }
+      return {...state, pages:action.payload }
     
     default:
       return state
