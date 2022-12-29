@@ -26,6 +26,10 @@
           "title": "📃 To do",
           "tasks": [
             {
+              "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
+              "title": "async/await"
+            },
+            {
               "id": "52468cef-50e5-4329-a724-4440cb1c7d70",
               "title": "callback"
             }
@@ -34,12 +38,7 @@
         {
           "id": "298e83d0-c676-4f11-a8b8-4dfa6862bcd0",
           "title": "✏️ In progress",
-          "tasks": [
-            {
-              "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
-              "title": "async/await"
-            }
-          ]
+          "tasks": []
         },
         {
           "id": "7653cc03-5fdc-4a9a-a9ea-c40e8fe7f987",

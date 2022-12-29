@@ -4,7 +4,7 @@ import React from "react"
 
 const Main = () => {
   return (
-    <div style={{height:"100vh"}}>
+    <div style={{height:"91vh"}}>
       <Navbar/>
       <div className="block h-full px-10 py-5 ">
         <Outlet></Outlet>

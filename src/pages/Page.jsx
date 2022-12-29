@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Kanban from '../components/kanban/Kanban'
-import KanbanCol from '../components/kanban/KanbanCol'
 
 const Page = () => {
 
