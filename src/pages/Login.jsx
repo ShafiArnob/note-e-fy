@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const [loginFormData,setloginFormData] = useState({})
@@ -23,7 +24,9 @@ const Login = () => {
           <input onBlur={(e)=>setloginFormData({...loginFormData, [e.target.name] : e.target.value })}  name='password' id='password' type="text" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
         </div>
 
-        <button className='btn my-10 py-2'>Signup</button>
+        <button className='btn my-10 py-2'>Login</button>
+
+        <p>Dont have an account <span className='text-blue-600 underline'><Link to="/signup">click</Link></span> to signup</p>
       </form>
     </div>
   )
