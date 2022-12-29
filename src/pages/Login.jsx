@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+  const [loginFormData,setloginFormData] = useState({})
+
+  const onSubmit = (e) =>{
+    e.preventDefault()
+    console.log("Login - ",loginFormData);
+  }
 
   return (
-    <div className='h-full flex items-center justify-center'>
-      <form onSubmit={Login} className='inline-block bg-zinc-600 p-10 rounded-lg flex flex-col items-center justify-center'>
+    <div className='h-full flex flex-col items-center justify-center'>
+      <form onSubmit={onSubmit} className='inline-block bg-[#383838] p-9 rounded-lg flex flex-col  justify-center space-y-4'>
+        <h1 className='text-center font-bold font-mono text-2xl'>Login</h1>
+
         <div>
-          <label className='mr-6' htmlFor="username">Username: </label>
-          <input id='username' type="text" className='text-black'/>
+          <label className='text-gray-300 font-semibold' htmlFor="email">Email: </label>
+          <input onBlur={(e)=>setloginFormData({...loginFormData, [e.target.name] : e.target.value })}  name='email' id='email' type="text" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
         </div>
-        <button className='btn'>Login</button>
+
+        <div>
+          <label className='text-gray-300 font-semibold' htmlFor="password">Password: </label>
+          <input onBlur={(e)=>setloginFormData({...loginFormData, [e.target.name] : e.target.value })}  name='password' id='password' type="text" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
+        </div>
+
+        <button className='btn my-10 py-2'>Signup</button>
       </form>
     </div>
   )

@@ -26,27 +26,28 @@
           "title": "📃 To do",
           "tasks": [
             {
-              "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
-              "title": "async/await"
-            },
-            {
-              "id": "52468cef-50e5-4329-a724-4440cb1c7d70",
-              "title": "callback"
+              "id": "48ce16ae-67f2-4278-b174-e674f032d458",
+              "title": "fetch data"
             }
           ]
         },
         {
           "id": "298e83d0-c676-4f11-a8b8-4dfa6862bcd0",
           "title": "✏️ In progress",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
+              "title": "async/await"
+            }
+          ]
         },
         {
           "id": "7653cc03-5fdc-4a9a-a9ea-c40e8fe7f987",
           "title": "✔️ Completed",
           "tasks": [
             {
-              "id": "48ce16ae-67f2-4278-b174-e674f032d458",
-              "title": "fetch data"
+              "id": "52468cef-50e5-4329-a724-4440cb1c7d70",
+              "title": "callback"
             }
           ]
         }
@@ -62,10 +63,6 @@
           "title": "📃 To do",
           "tasks": [
             {
-              "id": "95360d09-7e7b-4e59-90ff-f6a1140f9e96",
-              "title": "What is Context-Provider??"
-            },
-            {
               "id": "a6dbe1cb-1b4c-4cfa-816p-cf96480953dg",
               "title": "What is useState?"
             }
@@ -76,8 +73,8 @@
           "title": "✏️ In progress",
           "tasks": [
             {
-              "id": "3ae5a0bd-1849-464d-af76-eb32d1619525",
-              "title": "What is Redux??"
+              "id": "95360d09-7e7b-4e59-90ff-f6a1140f9e96",
+              "title": "What is Context-Provider??"
             }
           ]
         },
@@ -88,6 +85,10 @@
             {
               "id": "a6dbe1cb-1b4c-4cfa-8169-cf96480953da",
               "title": "What is JSX?"
+            },
+            {
+              "id": "3ae5a0bd-1849-464d-af76-eb32d1619525",
+              "title": "What is Redux??"
             }
           ]
         }
