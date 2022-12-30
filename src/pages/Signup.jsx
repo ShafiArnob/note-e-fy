@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSignup } from '../firebase/useSignup'
 
 const Signup = () => {
   const [signupFormData,setSignupFormData] = useState({})
+  const {signup,error} = useSignup()
 
   const onSubmit = (e) =>{
     e.preventDefault()
-    console.log("Sign - ",signupFormData);
+    // console.log("Sign - ",signupFormData);
+    signup(signupFormData.email, signupFormData.password, signupFormData.username)
+    console.log(error);
   }
 
   return (
@@ -26,7 +30,7 @@ const Signup = () => {
 
         <div>
           <label className='text-gray-300 font-semibold' htmlFor="password">Password: </label>
-          <input onBlur={(e)=>setSignupFormData({...signupFormData, [e.target.name] : e.target.value })}  name='password' id='password' type="text" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
+          <input onBlur={(e)=>setSignupFormData({...signupFormData, [e.target.name] : e.target.value })}  name='password' id='password' type="password" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
         </div>
 
         <button className='btn my-10 py-2'>Signup</button>

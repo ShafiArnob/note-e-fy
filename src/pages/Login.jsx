@@ -21,7 +21,7 @@ const Login = () => {
 
         <div>
           <label className='text-gray-300 font-semibold' htmlFor="password">Password: </label>
-          <input onBlur={(e)=>setloginFormData({...loginFormData, [e.target.name] : e.target.value })}  name='password' id='password' type="text" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
+          <input onBlur={(e)=>setloginFormData({...loginFormData, [e.target.name] : e.target.value })}  name='password' id='password' type="password" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
         </div>
 
         <button className='btn my-10 py-2'>Login</button>
