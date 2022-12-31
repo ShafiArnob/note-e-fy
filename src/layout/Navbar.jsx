@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { projectAuth } from "../firebase/config";
 
 const Navbar = () => {
-  const user = projectAuth.currentUser
+  const user = useSelector((state) => state.user)
+  // console.log(user);
   return (
     <nav className="bg-neutral-900 p-4 flex justify-between items-center">
       <Link to="/" className="text-white font-bold text-2xl">
@@ -10,7 +12,9 @@ const Navbar = () => {
       </Link>
 
       <div className="flex items-center">
-        {user?(<p className="text-green-400 mr-4">{user.displayName}</p>):""}
+
+        {user?<p className="text-green-400 mr-4">{user.displayName}</p>:"Null"}
+
         <Link to="/page" className="text-white mr-4">
           Page
         </Link>

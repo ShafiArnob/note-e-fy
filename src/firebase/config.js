@@ -1,6 +1,8 @@
-import firebase from "firebase/app";
+import {initializeApp} from "firebase/app";
 import 'firebase/auth'
+import { getAuth } from "firebase/auth";
 import 'firebase/firestore'
+import { getFirestore } from "firebase/firestore";
 // import { defineConfig, loadEnv } from 'vite'
 
 
@@ -16,13 +18,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 //Init Services
-const projectAuth = firebase.auth()
-const projectFirestore = firebase.firestore()
+const projectAuth = getAuth()
+const projectFirestore = getFirestore()
 
 //timestamp
-const timeStamp = firebase.firestore.Timestamp
+// const timeStamp = firebase.firestore.Timestamp
 
-export {projectAuth, projectFirestore, timeStamp}
+export {projectAuth, projectFirestore}
