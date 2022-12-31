@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate, useNavigate } from "react-router-dom";
 import { projectAuth } from "../firebase/config";
+import RequireAuth from "../firebase/RequireAuth";
 import Main from "../layout/Main";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -7,6 +8,7 @@ import Page from "../pages/Page";
 import Signup from "../pages/Signup";
 
 const user = projectAuth.currentUser
+
 const routes = createBrowserRouter([
   {
     path:"/",
@@ -14,12 +16,12 @@ const routes = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home/>,
+        element:<RequireAuth><Home/></RequireAuth>,
       },
       
       {
         path:"pages/:id",
-        element:<Page></Page>,
+        element:<RequireAuth><Page/></RequireAuth>,
       },
 
       {
@@ -28,7 +30,7 @@ const routes = createBrowserRouter([
       },
       {
         path:"signup",
-        element:user ? <Navigate to="/"/> : <Signup/>  
+        element: user ? <Navigate to="/"/> : <Signup/>  
       },
     ],
   },

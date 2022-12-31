@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom'
+import { projectAuth } from '../firebase/config';
 
 const Login = () => {
   const [loginFormData,setloginFormData] = useState({})
-
+  const [ signInWithEmailAndPassword, user, loading, error ] = useSignInWithEmailAndPassword(projectAuth);
   const onSubmit = (e) =>{
     e.preventDefault()
-    console.log("Login - ",loginFormData);
+    signInWithEmailAndPassword(loginFormData.email, loginFormData.password)
   }
 
   return (
