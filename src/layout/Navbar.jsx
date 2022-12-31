@@ -1,10 +1,19 @@
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import { projectAuth } from "../firebase/config";
 
 const Navbar = () => {
-  const [user, loading, error] = useAuthState(projectAuth)
+  const [user] = useAuthState(projectAuth)
+  const [signOut, loading, error] = useSignOut(projectAuth);
   // console.log(user);
+
+  const handleLogout = async() => {
+      const success = await signOut();
+
+      if (success) {
+        alert('You are sign out');
+      }
+    }
   return (
     <nav className="bg-neutral-900 p-4 flex justify-between items-center">
       <Link to="/" className="text-white font-bold text-2xl">
@@ -18,7 +27,7 @@ const Navbar = () => {
         <Link to="/page" className="text-white mr-4">
           Page
         </Link>
-        <Link href="#" className="text-white">
+        <Link href="#" className="text-white" onClick={() => handleLogout()}>
           Logout
         </Link>
       </div>
