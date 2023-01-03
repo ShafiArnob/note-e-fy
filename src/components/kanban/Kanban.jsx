@@ -1,5 +1,7 @@
 import React from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import AddCol from './AddCol'
+
 import KanbanCol from './KanbanCol'
 
 const Kanban = ({page}) => {
@@ -17,7 +19,7 @@ const Kanban = ({page}) => {
   const onDragEnd = result =>{
     if (!result.destination) return
     const { source, destination } = result
-
+    console.log(result);
     if (source.droppableId !== destination.droppableId) {
         const sourceColIndex = page.kanban.findIndex(e => e.id === source.droppableId)
         const destinationColIndex = page.kanban.findIndex(e => e.id === destination.droppableId)
@@ -33,7 +35,7 @@ const Kanban = ({page}) => {
 
         page.kanban[sourceColIndex].tasks = sourceTask
         page.kanban[destinationColIndex].tasks = destinationTask
-
+        // console.log(page);
         updateTask(page)
     }
   }
@@ -43,6 +45,7 @@ const Kanban = ({page}) => {
       {/* Page Title */}
       <div className='my-4'>
         <h2 className='text-xl font-bold'>{page.title}</h2>
+        <p>{page.id}</p>
       </div>
 
       {/* kanban */}
@@ -56,6 +59,7 @@ const Kanban = ({page}) => {
             }
           </Droppable>
         ))}
+        <AddCol page={page}></AddCol>
       </div>
     </DragDropContext>
     </>

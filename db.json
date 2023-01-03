@@ -26,8 +26,8 @@
           "title": "📃 To do",
           "tasks": [
             {
-              "id": "48ce16ae-67f2-4278-b174-e674f032d458",
-              "title": "fetch data"
+              "id": "52468cef-50e5-4329-a724-4440cb1c7d70",
+              "title": "callback"
             }
           ]
         },
@@ -46,8 +46,8 @@
           "title": "✔️ Completed",
           "tasks": [
             {
-              "id": "52468cef-50e5-4329-a724-4440cb1c7d70",
-              "title": "callback"
+              "id": "48ce16ae-67f2-4278-b174-e674f032d458",
+              "title": "fetch data"
             }
           ]
         }
