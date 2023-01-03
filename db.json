@@ -22,28 +22,30 @@
       "title": "How to learn JS",
       "kanban": [
         {
-          "id": "b76819f0-f4a8-4718-9441-8507b048e147",
-          "title": "📃 To do",
+          "id": "298e83d0-c676-4f11-a8b8-4dfa6862bcd0",
+          "title": "✏️ In progress",
           "tasks": [
             {
               "id": "52468cef-50e5-4329-a724-4440cb1c7d70",
               "title": "callback"
             }
-          ]
+          ],
+          "index": 1
         },
         {
-          "id": "298e83d0-c676-4f11-a8b8-4dfa6862bcd0",
-          "title": "✏️ In progress",
+          "id": "7653cc03-5fdc-4a9a-a9ea-c40e8fe7f987",
+          "title": "✔️ Completed",
           "tasks": [
             {
               "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
               "title": "async/await"
             }
-          ]
+          ],
+          "index": 2
         },
         {
-          "id": "7653cc03-5fdc-4a9a-a9ea-c40e8fe7f987",
-          "title": "✔️ Completed",
+          "id": "8d8147de-6e58-4d61-9af8-cf2035b2762b",
+          "title": "progress",
           "tasks": [
             {
               "id": "48ce16ae-67f2-4278-b174-e674f032d458",
@@ -52,9 +54,27 @@
           ]
         },
         {
-          "id": "8d8147de-6e58-4d61-9af8-cf2035b2762b",
-          "title": "progress",
-          "tasks": []
+          "id": "b76819f0-f4a8-4718-9441-8507b048e147",
+          "title": "📃 To do",
+          "tasks": [
+            {
+              "id": "82959cac-08d3-4530-ae2b-ec257de6626e",
+              "title": "gg"
+            }
+          ],
+          "index": 0
+        },
+        {
+          "id": "47935a32-1056-40f2-b1e4-51118be39fa0",
+          "title": "pp",
+          "tasks": [],
+          "index": 4
+        },
+        {
+          "id": "d896b058-6104-40bc-bd01-fd04b16cf411",
+          "title": "tt",
+          "tasks": [],
+          "index": 5
         }
       ]
     },
@@ -64,16 +84,6 @@
       "title": "How to learn React",
       "kanban": [
         {
-          "id": "8b3112c0-706d-4c3c-896d-60d19bf187d7",
-          "title": "📃 To do",
-          "tasks": [
-            {
-              "id": "a6dbe1cb-1b4c-4cfa-816p-cf96480953dg",
-              "title": "What is useState?"
-            }
-          ]
-        },
-        {
           "id": "3ecee80d-6b68-46bd-a783-f1113c7c7677",
           "title": "✏️ In progress",
           "tasks": [
@@ -81,7 +91,8 @@
               "id": "95360d09-7e7b-4e59-90ff-f6a1140f9e96",
               "title": "What is Context-Provider??"
             }
-          ]
+          ],
+          "index": 1
         },
         {
           "id": "07ada544-63e5-4fec-bad0-fbba8541a815",
@@ -95,7 +106,27 @@
               "id": "3ae5a0bd-1849-464d-af76-eb32d1619525",
               "title": "What is Redux??"
             }
-          ]
+          ],
+          "index": 2
+        },
+        {
+          "id": "8b3112c0-706d-4c3c-896d-60d19bf187d7",
+          "title": "📃 To do",
+          "tasks": [
+            {
+              "id": "a6dbe1cb-1b4c-4cfa-816p-cf96480953dg",
+              "title": "What is useState?"
+            },
+            {
+              "id": "b89e286a-7c11-45f6-8d54-1c1030b942bc",
+              "title": "JSX"
+            },
+            {
+              "id": "8752bc13-ff8c-4ad2-9c28-6b22cb609a7d",
+              "title": "jsx"
+            }
+          ],
+          "index": 0
         }
       ]
     }

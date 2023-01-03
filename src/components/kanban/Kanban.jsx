@@ -42,11 +42,11 @@ const Kanban = ({page}) => {
 
       {/* kanban */}
       <div className='flex '>
-        {page.kanban?.map(kanbanSection => (
+        {page.kanban?.sort((a,b) => a.index - b.index).map(kanbanSection => (
           <Droppable key={kanbanSection.id} droppableId={kanbanSection.id}>
             {
               (provided) => (
-                <KanbanCol key={kanbanSection.id} section={kanbanSection} provided={provided}></KanbanCol>
+                <KanbanCol key={kanbanSection.id} section={kanbanSection} provided={provided} page={page}></KanbanCol>
               )
             }
           </Droppable>

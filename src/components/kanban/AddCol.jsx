@@ -11,7 +11,8 @@ const AddCol = ({page}) => {
     const data = {
       id: uuidv4(),
       title: colTitle,
-      tasks:tasks
+      tasks:tasks,
+      index:page.kanban.length
     }
 
     page.kanban.push(data)

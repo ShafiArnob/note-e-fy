@@ -2,7 +2,7 @@ import React from 'react'
 import AddItem from './AddItem'
 import KanbanRow from './KanbanRow'
 
-const KanbanCol = ({section,provided}) => {
+const KanbanCol = ({section,provided, page}) => {
   // console.log(section);
   return (
     <div className='w-1/4 max-w-none bg-[#383838] p-6 rounded-lg ml-4' {...provided.droppableProps} ref={provided.innerRef}>
@@ -17,7 +17,7 @@ const KanbanCol = ({section,provided}) => {
         {section.tasks.map((task, index)=>(<KanbanRow key={task.id} task={task} index={index}></KanbanRow>))}
         {provided.placeholder}
       </div>
-      <AddItem/>
+      <AddItem section={section} page={page}/>
     </div>
   )
 }
