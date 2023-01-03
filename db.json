@@ -50,6 +50,16 @@
               "title": "fetch data"
             }
           ]
+        },
+        {
+          "id": "a7f421cb-35ac-4bb3-9c51-13a681eab27a",
+          "title": "Progress",
+          "tasks": []
+        },
+        {
+          "id": "e894649d-dc32-4cc1-882e-84bd88d00613",
+          "title": "Progress",
+          "tasks": []
         }
       ]
     },

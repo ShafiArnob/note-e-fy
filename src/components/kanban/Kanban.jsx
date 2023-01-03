@@ -1,21 +1,13 @@
 import React from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
-import AddCol from './AddCol'
+import { updateTask } from './kanbanFunctions'
 
+
+import AddCol from './AddCol'
 import KanbanCol from './KanbanCol'
 
 const Kanban = ({page}) => {
-  const updateTask = data =>{
-    fetch(`http://localhost:8000/pages/${page.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(res=>res.json())
-    .then(data=> data)
-  }
+
   const onDragEnd = result =>{
     if (!result.destination) return
     const { source, destination } = result
