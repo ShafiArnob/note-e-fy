@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { updateTask } from './kanbanFunctions'
+
 
 const AddCol = ({page}) => {
   const [colTitle, setColTitle] = useState('')
@@ -19,7 +19,7 @@ const AddCol = ({page}) => {
 
     const res = updateTask(page)
     // const {data:res} = axios.put(`http://localhost:8000/pages/${page.id}`,page).then(res => res.json())
-    // console.log("res = ",res);
+    console.log("res = ",res);
     setColTitle('')
   }
   return (

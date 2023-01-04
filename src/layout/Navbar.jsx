@@ -1,5 +1,6 @@
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import AddPage from "../components/AddPage";
 import { projectAuth } from "../firebase/config";
 
 const Navbar = () => {
@@ -20,15 +21,13 @@ const Navbar = () => {
         note<span className="mx-0.5">·​</span>​e<span className="mx-0.5">·​</span>​fy
       </Link>
 
-      <div className="flex items-center">
+      <div className="flex items-center space-x-5">
 
-        {user?<p className="text-green-400 mr-4">{user.displayName}</p>:""}
 
-        <Link to="/page" className="text-white mr-4">
-          Page
-        </Link>
+        {user ? <p className="text-green-400">({user.displayName})</p>:""}
+        <AddPage/>
         <Link href="#" className="text-white" onClick={() => handleLogout()}>
-          Logout
+          <p className="mr-6">Logout</p>
         </Link>
       </div>
     </nav>
