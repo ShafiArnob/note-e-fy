@@ -41,7 +41,7 @@ const Kanban = ({page}) => {
       </div>
 
       {/* kanban */}
-      <div className='flex '>
+      <div className='flex'>
         {page.kanban?.sort((a,b) => a.index - b.index).map(kanbanSection => (
           <Droppable key={kanbanSection.id} droppableId={kanbanSection.id}>
             {

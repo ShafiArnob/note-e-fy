@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { updateTask } from './kanbanFunctions'
@@ -6,8 +7,7 @@ const AddCol = ({page}) => {
   const [colTitle, setColTitle] = useState('')
   const tasks = []
   const addColumn = (e) => {
-    e.preventDefault()
-    console.log("f");    
+    e.preventDefault()   
     const data = {
       id: uuidv4(),
       title: colTitle,
@@ -17,10 +17,11 @@ const AddCol = ({page}) => {
 
     page.kanban.push(data)
 
-    updateTask(page)
+    const res = updateTask(page)
+    // const {data:res} = axios.put(`http://localhost:8000/pages/${page.id}`,page).then(res => res.json())
+    // console.log("res = ",res);
     setColTitle('')
   }
-  // console.log(colTitle);
   return (
     <form onSubmit={addColumn} className=" flex flex-col justify-center cursor-pointer w-2/12 h-full bg-[#383838] p-2 rounded-lg ml-4 border-dashed border-2 border-green-600">
       <input onChange={(e)=>setColTitle(e.target.value)} value={colTitle} type="text" name="" id="" className='p-2 m-1 rounded-md bg-[#212121]'/>

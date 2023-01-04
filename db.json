@@ -22,6 +22,17 @@
       "title": "How to learn JS",
       "kanban": [
         {
+          "id": "b76819f0-f4a8-4718-9441-8507b048e147",
+          "title": "📃 To do",
+          "tasks": [
+            {
+              "id": "82959cac-08d3-4530-ae2b-ec257de6626e",
+              "title": "gg"
+            }
+          ],
+          "index": 0
+        },
+        {
           "id": "298e83d0-c676-4f11-a8b8-4dfa6862bcd0",
           "title": "✏️ In progress",
           "tasks": [
@@ -44,37 +55,10 @@
           "index": 2
         },
         {
-          "id": "8d8147de-6e58-4d61-9af8-cf2035b2762b",
-          "title": "progress",
-          "tasks": [
-            {
-              "id": "48ce16ae-67f2-4278-b174-e674f032d458",
-              "title": "fetch data"
-            }
-          ]
-        },
-        {
-          "id": "b76819f0-f4a8-4718-9441-8507b048e147",
-          "title": "📃 To do",
-          "tasks": [
-            {
-              "id": "82959cac-08d3-4530-ae2b-ec257de6626e",
-              "title": "gg"
-            }
-          ],
-          "index": 0
-        },
-        {
-          "id": "47935a32-1056-40f2-b1e4-51118be39fa0",
+          "id": "551251cd-2003-46eb-a8e1-ed8dd3354442",
           "title": "pp",
           "tasks": [],
-          "index": 4
-        },
-        {
-          "id": "d896b058-6104-40bc-bd01-fd04b16cf411",
-          "title": "tt",
-          "tasks": [],
-          "index": 5
+          "index": 3
         }
       ]
     },
@@ -124,6 +108,10 @@
             {
               "id": "8752bc13-ff8c-4ad2-9c28-6b22cb609a7d",
               "title": "jsx"
+            },
+            {
+              "id": "ec6b32e8-530e-4565-b5de-3c48dbf239a4",
+              "title": "PP"
             }
           ],
           "index": 0

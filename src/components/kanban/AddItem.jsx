@@ -23,7 +23,8 @@ const AddItem = ({section, page}) => {
 
     page = {...page, kanban:newPage}
 
-    updateTask(page)    
+    updateTask(page)
+    setItem('') 
   }
   return (
     <div className='flex items-center justify-center cursor-pointer p-1.5 rounded-md mt-2 bg-[#212121] border-dashed border-2 border-green-600 border-opacity-70'>
