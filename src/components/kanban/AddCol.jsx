@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-
+import { updateTask } from './kanbanFunctions'
 
 const AddCol = ({page}) => {
   const [colTitle, setColTitle] = useState('')

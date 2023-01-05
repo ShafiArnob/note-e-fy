@@ -1,3 +1,4 @@
+
 import axios from "axios"
 
 export const updateTask = async data =>{
@@ -14,4 +15,8 @@ export const updateTask = async data =>{
   // const dataR = await res.json()
 
   return res
+}
+
+export const addPage = async (data) =>{
+  await axios.post('http://localhost:8000/pages', data)
 }
