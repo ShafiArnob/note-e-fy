@@ -11,7 +11,6 @@ const Kanban = ({page}) => {
   const onDragEnd = result =>{
     if (!result.destination) return
     const { source, destination } = result
-    console.log(result);
     if (source.droppableId !== destination.droppableId) {
         const sourceColIndex = page.kanban.findIndex(e => e.id === source.droppableId)
         const destinationColIndex = page.kanban.findIndex(e => e.id === destination.droppableId)

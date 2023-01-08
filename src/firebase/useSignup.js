@@ -18,8 +18,6 @@ export const useSignup = () =>{
       const res = await createUserWithEmailAndPassword(email, password)
       const success = await updateProfile({displayName})
 
-      console.log(res);
-      console.log(error);
       if(res){
         //create user document
         const pages = []

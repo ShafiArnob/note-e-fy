@@ -3,12 +3,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import HomeCard from '../components/HomeCard';
 import loadPagesData from '../redux/thunk/pages/fetchPages';
 import { Link } from 'react-router-dom';
+import { getPages } from '../firebase/getPages';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { projectAuth } from '../firebase/config';
+import Loading from '../components/Loading';
 const Home = () => {
   const pages = useSelector((state) => state.kanban.pages)
-  // console.log(pages);
-
+  const [user, loading, error] = useAuthState(projectAuth)
   const dispatch = useDispatch()
-
+    // if(user){
+      // }
+      
+    if(loading){
+      return <Loading/>
+    }
+    const {documents, error:err} = getPages(user.uid)
+    console.log(documents);
+  
   useEffect(()=>{
     dispatch(loadPagesData())
   },[])
