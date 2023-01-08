@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 import { projectAuth } from '../firebase/config';
+import { loginUser } from '../redux/actions/pageAction';
 
 const Login = () => {
   const [loginFormData,setloginFormData] = useState({})
@@ -9,12 +11,18 @@ const Login = () => {
   const [password, setPassword] =useState('')
 
   const [ signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(projectAuth);
+  const dispatch = useDispatch()
   const navigate = useNavigate()
-  const onSubmit = (e) =>{
+  
+  const onSubmit = async(e) =>{
     e.preventDefault()
-    const user = signInWithEmailAndPassword(email,password)
+    await signInWithEmailAndPassword(email,password)
+    
+    console.log(user.user);
     if(user){
-      navigate('/')
+      //dispatch Login action
+      dispatch(loginUser(user))
+      // navigate('/')
     }
   }
   // console.log(email, password);
