@@ -48,6 +48,7 @@ const Page = () => {
     return <Loading/>
   }
 
+  // Json Server
   // useEffect(()=>{
   //   fetch(`http://localhost:8000/pages/${params.id}`)
   //   .then(res => res.json())

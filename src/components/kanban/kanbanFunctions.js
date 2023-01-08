@@ -1,5 +1,7 @@
 
 import axios from "axios"
+import { doc, updateDoc } from "firebase/firestore"
+import { projectFirestore } from "../../firebase/config"
 
 export const updateTask = async data =>{
   // const res = fetch(`http://localhost:8000/pages/${data.id}`, {
@@ -11,10 +13,17 @@ export const updateTask = async data =>{
   // })
   // .then(res=>res.json())
 
-  const res = await axios.put(`http://localhost:8000/pages/${data.id}`,data)
+  // local server
+  // const res = await axios.put(`http://localhost:8000/pages/${data.id}`,data)
   // const dataR = await res.json()
 
+  
+  const collRef = doc(projectFirestore,"pages",data.id)
+
+  const res = await updateDoc(collRef, data)
   return res
+
+  // console.log(data);
 }
 
 export const addPage = async (data) =>{
