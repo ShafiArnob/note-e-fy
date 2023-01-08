@@ -17,6 +17,7 @@ const Home = () => {
 
   const [user, loading] = useAuthState(projectAuth)
   
+  // Load Home Page Data
   useEffect(()=>{
     if(user){
       const docRef = doc(projectFirestore, "users", user.uid)
