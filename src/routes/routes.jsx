@@ -16,17 +16,17 @@ const routes = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home/>,
+        element:<RequireAuth><Home/></RequireAuth>,
       },
       
       {
         path:"pages/:id",
-        element:<Page/>,
+        element:<RequireAuth><Page/></RequireAuth>,
       },
 
       {
         path:"login",
-        element:<Login/>,
+        element: user ? <Navigate to="/"/> : <Login/>,
       },
       {
         path:"signup",
