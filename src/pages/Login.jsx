@@ -18,11 +18,11 @@ const Login = () => {
     e.preventDefault()
     await signInWithEmailAndPassword(email,password)
     
-    console.log(user.user);
+    // console.log(user.user);
     if(user){
       //dispatch Login action
       dispatch(loginUser(user))
-      // navigate('/')
+      navigate('/')
     }
   }
   // console.log(email, password);

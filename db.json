@@ -24,7 +24,12 @@
         {
           "id": "b76819f0-f4a8-4718-9441-8507b048e147",
           "title": "📃 To do",
-          "tasks": [],
+          "tasks": [
+            {
+              "id": "82959cac-08d3-4530-ae2b-ec257de6626e",
+              "title": "gg"
+            }
+          ],
           "index": 0
         },
         {
@@ -43,44 +48,15 @@
           "title": "✔️ Completed",
           "tasks": [
             {
+              "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
+              "title": "async/await"
+            },
+            {
               "id": "55e21b9e-d4cc-4252-9433-f5c6b1d3e15a",
               "title": "njnjih"
             }
           ],
           "index": 2
-        },
-        {
-          "id": "551251cd-2003-46eb-a8e1-ed8dd3354442",
-          "title": "pp",
-          "tasks": [
-            {
-              "id": "f8b15beb-7272-493f-945d-9cfb484853d6",
-              "title": "async/await"
-            },
-            {
-              "id": "82959cac-08d3-4530-ae2b-ec257de6626e",
-              "title": "gg"
-            }
-          ],
-          "index": 3
-        },
-        {
-          "id": "6c717f8f-c46f-4158-af3c-de8ee3a1fcec",
-          "title": "kokokok",
-          "tasks": [],
-          "index": 4
-        },
-        {
-          "id": "f89c7838-d8e4-4dec-b28a-60bf111c9f41",
-          "title": "bhhbhb",
-          "tasks": [],
-          "index": 5
-        },
-        {
-          "id": "4cb7c391-7c23-41f6-b9a3-2d328011f856",
-          "title": "kkjkjk",
-          "tasks": [],
-          "index": 6
         }
       ]
     },
