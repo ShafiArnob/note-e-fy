@@ -1,6 +1,7 @@
 
 import axios from "axios"
-import { doc, updateDoc } from "firebase/firestore"
+import { doc, getDoc, onSnapshot, updateDoc, writeBatch } from "firebase/firestore"
+import { useEffect } from "react"
 import { projectFirestore } from "../../firebase/config"
 
 export const updateTask = async data =>{
@@ -21,11 +22,41 @@ export const updateTask = async data =>{
   const collRef = doc(projectFirestore,"pages",data.id)
 
   const res = await updateDoc(collRef, data)
-  return res
+  // console.log(res);
+  // return res
 
   // console.log(data);
 }
 
-export const addPage = async (data) =>{
-  await axios.post('http://localhost:8000/pages', data)
+export const addPage = async (data, user) =>{
+  // console.log(data, "-", user.uid);
+  // await axios.post('http://localhost:8000/pages', data)
+  
+  const docRef = doc(projectFirestore,"users",user.uid)
+  const docSnap = await getDoc(docRef)
+  
+
+  if(docSnap.exists()){
+    const userData = {...docSnap.data()}
+    const newData = {...userData, pages:[...userData.pages, data]} //user
+
+    // await setDoc(doc(projectFirestore, "pages", data.id), data)
+    const batch = writeBatch(projectFirestore)
+    
+    // Add page
+    const pageRef = doc(projectFirestore, "pages", data.id)
+    batch.set(pageRef, data)
+
+    delete newData["kanban"]
+    
+    // Add page referance to users
+    const userRef = doc(projectFirestore,"users",user.uid)
+    batch.update(userRef, newData)
+
+    await batch.commit()
+  }
+  else{
+    console.log("No Such Document");
+  }
+
 }

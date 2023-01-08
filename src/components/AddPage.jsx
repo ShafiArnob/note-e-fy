@@ -18,7 +18,7 @@ const AddPage = () => {
         title: pageTitle,
         kanban: kanban
       }
-      addPage(data)
+      addPage(data, user)
     }
     else{
       alert("No Page is Created")
