@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
+import Loading from '../components/Loading';
 import { projectAuth } from '../firebase/config';
 import { loginUser } from '../redux/actions/pageAction';
 
@@ -18,14 +19,16 @@ const Login = () => {
     e.preventDefault()
     await signInWithEmailAndPassword(email,password)
     
-    // console.log(user.user);
-    if(user){
+    if(!loading && !error){
       //dispatch Login action
       dispatch(loginUser(user))
       navigate('/')
     }
   }
-  // console.log(email, password);
+  
+  if(loading){
+    return <Loading/>
+  }
   return (
     <div className='h-full flex flex-col items-center justify-center'>
       <form onSubmit={onSubmit} className='inline-block bg-[#383838] p-9 rounded-lg flex flex-col  justify-center space-y-4'>
@@ -44,10 +47,9 @@ const Login = () => {
         <button className='btn my-10 py-2'>Login</button>
 
         <p>Dont have an account <span className='text-blue-600 underline'><Link to="/signup">click</Link></span> to signup</p>
-      {/* {error && <p>{error}</p>} */}
+        {error && <p className=' p-2 py-4 rounded-lg border-4 border-red-700 bg-red-600 bg-opacity-60'>{error.message}</p>}
       </form>
       {/* {error && <p>{error.message}</p>} */}
-      {loading && <p>Loading....</p>}
     </div>
   )
 }
