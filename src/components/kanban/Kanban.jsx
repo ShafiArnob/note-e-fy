@@ -1,12 +1,16 @@
 import React from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { updateTask } from './kanbanFunctions'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { projectAuth } from '../../firebase/config'
 
 
 import AddCol from './AddCol'
 import KanbanCol from './KanbanCol'
+import DeletePage from '../DeletePage'
 
 const Kanban = ({page}) => {
+  const [user, loading] = useAuthState(projectAuth)
 
   const onDragEnd = result =>{
     if (!result.destination) return
@@ -34,8 +38,9 @@ const Kanban = ({page}) => {
     <>
     <DragDropContext onDragEnd={onDragEnd}>
       {/* Page Title */}
-      <div className='my-4'>
-        <h2 className='text-xl font-bold'>{page.title}</h2>
+      <div className='flex items-center py-4'>
+        <h2 className='text-xl font-bold mr-3'>{page.title}</h2>
+        {!loading ? <DeletePage page = {page} user={user}/> : ""}
       </div>
 
       {/* kanban */}
