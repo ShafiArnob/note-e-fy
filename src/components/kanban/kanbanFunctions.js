@@ -60,3 +60,16 @@ export const addPage = async (data, user) =>{
   }
 
 }
+
+export const delCol = async(colId, page) => {
+  const proceed = confirm(`Do you want to delete this column??`)
+  if(proceed){
+    // console.log("col Id", colId);
+    // console.log(page);
+    const newcolData = page.kanban.filter(col => col.id !== colId)
+    const newPageData = {...page, kanban:newcolData}
+    // console.log(newPageData);
+    const collRef = doc(projectFirestore,"pages",page.id)
+    const res = await updateDoc(collRef, newPageData)
+  }
+}

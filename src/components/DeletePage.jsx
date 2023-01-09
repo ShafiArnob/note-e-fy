@@ -10,7 +10,7 @@ const DeletePage = ({page, user}) => {
   const navigate = useNavigate()
 
   const handleDelete = async () =>{
-    console.log(page.id, page.title);
+    // console.log(page.id, page.title);
     const proceed = confirm(`Do You want delete the page "${page.title}" \n (Click Ok to Continue)`)
     
     if(proceed){
