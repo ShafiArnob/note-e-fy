@@ -1,5 +1,4 @@
 
-import axios from "axios"
 import { doc, getDoc, onSnapshot, updateDoc, writeBatch } from "firebase/firestore"
 import { useEffect } from "react"
 import { projectFirestore } from "../../firebase/config"
@@ -72,4 +71,21 @@ export const delCol = async(colId, page) => {
     const collRef = doc(projectFirestore,"pages",page.id)
     const res = await updateDoc(collRef, newPageData)
   }
+}
+
+export const delItem = async(itemId, colId, page) =>{
+
+  const targetCol = page.kanban.find(col => col.id === colId) //get targeted column
+  const targetColItemsWODelItem = targetCol.tasks.filter(item => item.id !==itemId) //removed item
+
+  const newTargetedCol = {...targetCol, tasks:targetColItemsWODelItem} //new col with removed item
+  const colsWOTargetCol = page.kanban.filter(col => col.id !== colId) // columns without targeted column
+
+  
+  const newColumns = [...colsWOTargetCol, newTargetedCol] // new all columns with removed items
+
+  const newPage = {...page, kanban:newColumns}
+
+  const collRef = doc(projectFirestore,"pages",page.id)
+  const res = await updateDoc(collRef, newPage)
 }
