@@ -46,7 +46,7 @@ const Home = () => {
   //   dispatch(loadPagesData())
   // },[])
 
-  if(loading){
+  if(loading && !document){
     return <Loading/>
   }
 

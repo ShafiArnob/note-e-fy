@@ -36,7 +36,6 @@ const Kanban = ({page}) => {
       {/* Page Title */}
       <div className='my-4'>
         <h2 className='text-xl font-bold'>{page.title}</h2>
-        <p>{page.id}</p>
       </div>
 
       {/* kanban */}
