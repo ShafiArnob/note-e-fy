@@ -90,3 +90,19 @@ export const delItem = async(itemId, colId, page) =>{
   const collRef = doc(projectFirestore,"pages",page.id)
   const res = await updateDoc(collRef, newPage)
 }
+
+export const editCol = async(section, page) =>{
+  const editTitle = prompt("Enter Column Title", section.title)
+
+  if(editTitle !== page.title && editTitle){
+    // const targetColData = page.kanban.find(col => col.id === section.id)
+    const restColsData = page.kanban.filter(col => col.id !== section.id)
+    const editedColData = {...section, title:editTitle}
+    const newColsData = [...restColsData, editedColData]
+    const newPageData = {...page, kanban:newColsData}
+    
+    //update
+    const collRef = doc(projectFirestore,"pages",page.id)
+    const res = await updateDoc(collRef, newPageData)
+  }  
+}
