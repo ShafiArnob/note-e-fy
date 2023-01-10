@@ -84,8 +84,9 @@ export const delItem = async(itemId, colId, page) =>{
   
   const newColumns = [...colsWOTargetCol, newTargetedCol] // new all columns with removed items
 
-  const newPage = {...page, kanban:newColumns}
+  const newPage = {...page, kanban:newColumns} // new page
 
+  // Update
   const collRef = doc(projectFirestore,"pages",page.id)
   const res = await updateDoc(collRef, newPage)
 }

@@ -8,6 +8,7 @@ import { projectAuth } from '../../firebase/config'
 import AddCol from './AddCol'
 import KanbanCol from './KanbanCol'
 import DeletePage from '../DeletePage'
+import EditPage from '../EditPage'
 
 const Kanban = ({page}) => {
   const [user, loading] = useAuthState(projectAuth)
@@ -38,8 +39,9 @@ const Kanban = ({page}) => {
     <>
     <DragDropContext onDragEnd={onDragEnd}>
       {/* Page Title */}
-      <div className='flex items-center py-4'>
+      <div className='flex space-x-2 items-center py-4'>
         <h2 className='text-xl font-bold mr-3'>{page.title}</h2>
+        {!loading ? <EditPage page = {page} user={user}/> : ""}
         {!loading ? <DeletePage page = {page} user={user}/> : ""}
       </div>
 
