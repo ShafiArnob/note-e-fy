@@ -125,6 +125,5 @@ export const editItem = async(task, colId, page)=>{
     // Update
   const collRef = doc(projectFirestore,"pages",page.id)
   const res = await updateDoc(collRef, newPage)
-
   }
 }
