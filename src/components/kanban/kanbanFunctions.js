@@ -1,4 +1,3 @@
-
 import { doc, getDoc, onSnapshot, updateDoc, writeBatch } from "firebase/firestore"
 import { useEffect } from "react"
 import { projectFirestore } from "../../firebase/config"
@@ -105,4 +104,27 @@ export const editCol = async(section, page) =>{
     const collRef = doc(projectFirestore,"pages",page.id)
     const res = await updateDoc(collRef, newPageData)
   }  
+}
+
+export const editItem = async(task, colId, page)=>{
+  const editTitle = prompt("Enter Column Title", task.title)
+
+  if(editTitle !== page.title && editTitle){
+    const newEditedTask = {...task, title:editTitle}
+
+    const targetCol = page.kanban.find(col => col.id === colId) //get targeted column
+    const targetColItemsWODelItem = targetCol.tasks.filter(item => item.id !==task.id) //removed item
+    const newColItems = [...targetColItemsWODelItem, newEditedTask] // added edited item
+    const newTargetCol = {...targetCol, tasks:newColItems}
+
+    const restCols = page.kanban.filter(doc=>doc.id !== colId) //rest of the cols without target cols
+    const newCols = [...restCols, newTargetCol] // added new edited col to cols
+
+    const newPage = {...page, kanban:newCols}
+    
+    // Update
+  const collRef = doc(projectFirestore,"pages",page.id)
+  const res = await updateDoc(collRef, newPage)
+
+  }
 }
