@@ -6,12 +6,14 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 
 import { doc, setDoc } from "firebase/firestore";
 import { addPage } from "../components/kanban/kanbanFunctions";
+import { useNavigate } from 'react-router-dom';
 
 export const useSignup = () =>{
   const dispatch = useDispatch()
 
   const [createUserWithEmailAndPassword, user, loading , error,] = useCreateUserWithEmailAndPassword(projectAuth)
   const [updateProfile] = useUpdateProfile(projectAuth);
+  const navigate = useNavigate()
 
 
   const signup = async(email, password, displayName) =>{
@@ -71,9 +73,13 @@ export const useSignup = () =>{
             }
           ]
         }
-        addPage(data, res.user)
+      addPage(data, res.user)
       //dispatch Login action
       dispatch(loginUser(res.user))
+
+      if(res.user){
+        navigate('/')
+      }
       }
   }
   return {signup, error, loading}
