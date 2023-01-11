@@ -21,7 +21,6 @@ const Signup = () => {
     
     if(!loading && !error){
       //dispatch Login action
-      dispatch(loginUser(user))
       navigate('/')
     }
   }

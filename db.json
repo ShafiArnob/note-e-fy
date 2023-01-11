@@ -63,7 +63,7 @@
     {
       "userName": "shafiarnob",
       "id": "d7bf499e-ff43-4305-b240-487b4c71400a",
-      "title": "How to learn React",
+      "title": "Default Board",
       "kanban": [
         {
           "id": "3ecee80d-6b68-46bd-a783-f1113c7c7677",
@@ -71,7 +71,11 @@
           "tasks": [
             {
               "id": "95360d09-7e7b-4e59-90ff-f6a1140f9e96",
-              "title": "What is Context-Provider??"
+              "title": "Something In Progress"
+            },
+            {
+              "id": "95360d0t-7g7b-4e79-94ff-f6a1140f9e96",
+              "title": "Something from ToDo"
             }
           ],
           "index": 1
@@ -82,11 +86,7 @@
           "tasks": [
             {
               "id": "a6dbe1cb-1b4c-4cfa-8169-cf96480953da",
-              "title": "What is JSX?"
-            },
-            {
-              "id": "3ae5a0bd-1849-464d-af76-eb32d1619525",
-              "title": "What is Redux??"
+              "title": "Something Complete"
             }
           ],
           "index": 2
@@ -97,19 +97,7 @@
           "tasks": [
             {
               "id": "a6dbe1cb-1b4c-4cfa-816p-cf96480953dg",
-              "title": "What is useState?"
-            },
-            {
-              "id": "b89e286a-7c11-45f6-8d54-1c1030b942bc",
-              "title": "JSX"
-            },
-            {
-              "id": "8752bc13-ff8c-4ad2-9c28-6b22cb609a7d",
-              "title": "jsx"
-            },
-            {
-              "id": "ec6b32e8-530e-4565-b5de-3c48dbf239a4",
-              "title": "PP"
+              "title": "Something ToDo"
             }
           ],
           "index": 0
