@@ -25,10 +25,9 @@ const Navbar = () => {
 
 
         {user ? <p className="text-green-400">({user.displayName})</p>:""}
-        <AddPage/>
-        <Link href="#" className="text-white" onClick={() => handleLogout()}>
-          <p className="mr-6">Logout</p>
-        </Link>
+        {!user ? <span></span> : <AddPage/>}
+        
+        {!user ? <span></span> : <Link className="text-white" onClick={() => handleLogout()}><p className="mr-6">Logout</p></Link>}
       </div>
     </nav>
   );
