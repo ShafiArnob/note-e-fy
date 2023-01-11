@@ -6,7 +6,7 @@ const EditPage = ({page, user}) => {
   
   const handleEdit = async () =>{
     // console.log(page.title, user.displayName);
-    const editTitle = prompt("Enter edited title", page.title)
+    const editTitle = prompt("Enter Page title", page.title)
 
     if(editTitle !== page.title && editTitle){
       const docRef = doc(projectFirestore,"users",user.uid)
