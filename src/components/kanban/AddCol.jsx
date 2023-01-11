@@ -8,18 +8,20 @@ const AddCol = ({page}) => {
   const tasks = []
   const addColumn = (e) => {
     e.preventDefault()   
-    const data = {
-      id: uuidv4(),
-      title: colTitle,
-      tasks:tasks,
-      index:page.kanban.length
+    if(colTitle){
+      const data = {
+        id: uuidv4(),
+        title: colTitle,
+        tasks:tasks,
+        index:page.kanban.length
+      }
+  
+      page.kanban.push(data)
+  
+      const res = updateTask(page)
+      // const {data:res} = axios.put(`http://localhost:8000/pages/${page.id}`,page).then(res => res.json())
+      setColTitle('')
     }
-
-    page.kanban.push(data)
-
-    const res = updateTask(page)
-    // const {data:res} = axios.put(`http://localhost:8000/pages/${page.id}`,page).then(res => res.json())
-    setColTitle('')
   }
   return (
     <form onSubmit={addColumn} className=" flex flex-col justify-center cursor-pointer rgb(22 163 74) m-4 w-48  h-36 bg-[#383838] p-2 rounded-lg ml-4 border-dashed border-2 border-green-600">
