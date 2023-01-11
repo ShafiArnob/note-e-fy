@@ -10,21 +10,23 @@ const AddItem = ({section, page}) => {
 
   const addItem = (e) =>{
     e.preventDefault()   
-    const data = {
-      id: uuidv4(),
-      title: item
+    if(item){
+      const data = {
+        id: uuidv4(),
+        title: item
+      }
+  
+      const selectedCol = page.kanban.find(col => col.id ===section.id)
+      const newPage = page.kanban.filter(col => col.id !== section.id)
+  
+      selectedCol.tasks.push(data)
+      newPage.push(selectedCol)
+  
+      page = {...page, kanban:newPage}
+  
+      updateTask(page)
+      setItem('') 
     }
-
-    const selectedCol = page.kanban.find(col => col.id ===section.id)
-    const newPage = page.kanban.filter(col => col.id !== section.id)
-
-    selectedCol.tasks.push(data)
-    newPage.push(selectedCol)
-
-    page = {...page, kanban:newPage}
-
-    updateTask(page)
-    setItem('') 
   }
   return (
     <div className='flex items-center justify-center cursor-pointer p-1.5 rounded-md mt-2 bg-[#212121] border-dashed border-2 border-green-600 border-opacity-70'>
