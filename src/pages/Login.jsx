@@ -44,7 +44,7 @@ const Login = () => {
   }
   return (
     <div className='h-full flex flex-col items-center justify-center'>
-      <form onSubmit={onSubmit} className='inline-block bg-[#383838] p-9 rounded-lg flex flex-col  justify-center space-y-4'>
+      <form onSubmit={onSubmit} className='inline-block bg-[#383838] p-9 w-1/4 rounded-lg flex flex-col  justify-center space-y-4'>
         <h1 className='text-center font-bold font-mono text-2xl'>Login</h1>
 
         <div>

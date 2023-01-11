@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useIdToken } from 'react-firebase-hooks/auth'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Loading from '../components/Loading'
+import { projectAuth } from '../firebase/config'
 import { useSignup } from '../firebase/useSignup'
 
 const Signup = () => {
@@ -13,16 +15,25 @@ const Signup = () => {
   const {signup, error, loading} = useSignup()
   const navigate = useNavigate()
 
+  const [token] = useIdToken(projectAuth);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+    useEffect( () =>{
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
 
   const onSubmit = (e) =>{
     e.preventDefault()
     // console.log("Sign - ",signupFormData);
     signup(email, password, username)
     
-    if(!loading && !error){
-      //dispatch Login action
-      navigate('/')
-    }
+    // if(!loading && !error){
+    //   //dispatch Login action
+    //   navigate('/')
+    // }
   }
 
   // console.log("u",username,"e",email,"p",password);
@@ -31,7 +42,7 @@ const Signup = () => {
   }
   return (
     <div className='h-full flex flex-col items-center justify-center'>
-      <form onSubmit={onSubmit} className='inline-block bg-[#383838] p-9 rounded-lg flex flex-col  justify-center space-y-4'>
+      <form onSubmit={onSubmit} className='inline-block bg-[#383838] p-9 rounded-lg flex flex-col w-1/4 justify-center space-y-4'>
         <h1 className='text-center font-bold font-mono text-2xl'>Sign-up</h1>
 
         <div>
@@ -41,7 +52,7 @@ const Signup = () => {
 
         <div>
           <label className='text-gray-300 font-semibold' htmlFor="email">Email: </label>
-          <input onChange={(e)=>setEmail(e.target.value)} value={email} onBlur={(e)=>setSignupFormData({...signupFormData, [e.target.name] : e.target.value })}  name='email' id='email' type="text" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
+          <input onChange={(e)=>setEmail(e.target.value)} value={email} onBlur={(e)=>setSignupFormData({...signupFormData, [e.target.name] : e.target.value })}  name='email' id='email' type="email" className='text-neutral-300 bg-[#212121] rounded-md h-10 mt-1 p-3 w-11/12'/>
         </div>
 
         <div>
