@@ -8,7 +8,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { projectAuth, projectFirestore } from '../firebase/config';
 import Loading from '../components/Loading';
 import { doc, onSnapshot } from 'firebase/firestore';
-const Home = () => {
+const Boards = () => {
   // const pages = useSelector((state) => state.kanban.pages)
   const dispatch = useDispatch()
 
@@ -60,4 +60,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Boards

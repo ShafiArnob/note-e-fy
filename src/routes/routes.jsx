@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate, useNavigate } from "react-router-dom";
 import { projectAuth } from "../firebase/config";
 import RequireAuth from "../firebase/RequireAuth";
 import Main from "../layout/Main";
-import Home from "../pages/Home";
+import Boards from "../pages/Boards";
 import Login from "../pages/Login";
 import Page from "../pages/Page";
 import Signup from "../pages/Signup";
@@ -16,7 +16,7 @@ const routes = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<RequireAuth><Home/></RequireAuth>,
+        element:<RequireAuth><Boards/></RequireAuth>,
       },
       
       {
