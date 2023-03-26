@@ -36,7 +36,7 @@ const Kanban = ({page}) => {
     }
   }
   return (
-    <>
+    <div className='w-[1200px] mx-auto'>
     <DragDropContext onDragEnd={onDragEnd}>
       {/* Page Title */}
       <div className='flex space-x-2 items-center py-4'>
@@ -59,7 +59,7 @@ const Kanban = ({page}) => {
         <AddCol page={page}></AddCol>
       </div>
     </DragDropContext>
-    </>
+    </div>
   )
 }
 
