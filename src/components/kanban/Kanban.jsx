@@ -36,17 +36,18 @@ const Kanban = ({page}) => {
     }
   }
   return (
-    <div className='w-[1200px] mx-auto'>
+    <div className='w-full mx-auto '>
     <DragDropContext onDragEnd={onDragEnd}>
       {/* Page Title */}
-      <div className='flex space-x-2 items-center py-4'>
+      <div className='flex justify-center space-x-2 items-center py-4 md:justify-start'>
         <h2 className='text-xl font-bold mr-3'>{page.title}</h2>
         {!loading ? <EditPage page = {page} user={user}/> : ""}
         {!loading ? <DeletePage page = {page} user={user}/> : ""}
       </div>
 
       {/* kanban */}
-      <div className='grid grid-cols-1 md:grid-cols-4 '>
+      {/* grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 */}
+      <div className='flex flex-wrap justify-center md:justify-start'>
         {page.kanban?.sort((a,b) => a.index - b.index).map(kanbanSection => (
           <Droppable key={kanbanSection.id} droppableId={kanbanSection.id}>
             {

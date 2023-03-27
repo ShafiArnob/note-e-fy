@@ -8,7 +8,7 @@ import { delCol, editCol } from './kanbanFunctions';
 const KanbanCol = ({section,provided, page}) => {
   // console.log(section);
   return (
-    <div className='w-72 max-w-none bg-[#383838] p-6 rounded-lg m-4' {...provided.droppableProps} ref={provided.innerRef}>
+    <div className='w-72  max-w-none bg-[#383838] p-6 rounded-lg m-4' {...provided.droppableProps} ref={provided.innerRef}>
       {/* Kanban Column title */}
       <div className='flex justify-between items-center  text-lg font-semibold mb-4'>
         <span className='flex items-center'>
