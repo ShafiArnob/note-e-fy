@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className=" bg-neutral-900 p-4 flex justify-between items-center">
       <div>
-        <Link to="/" className="text-white font-bold text-2xl">
+        <Link to="/" className="text-xl text-white font-bold md:text-2xl ">
           note<span className="mx-0.5">·​</span>​e<span className="mx-0.5">·​</span>​fy
         </Link>
       </div>
