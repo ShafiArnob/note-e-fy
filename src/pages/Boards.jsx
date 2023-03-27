@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import HomeCard from '../components/HomeCard';
-import loadPagesData from '../redux/thunk/pages/fetchPages';
 import { Link } from 'react-router-dom';
-import { getPages } from '../firebase/getPages';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { projectAuth, projectFirestore } from '../firebase/config';
 import Loading from '../components/Loading';
 import { doc, onSnapshot } from 'firebase/firestore';
 const Boards = () => {
-  // const pages = useSelector((state) => state.kanban.pages)
-  const dispatch = useDispatch()
 
   const [documents, setDocuments] = useState(null)
   const [error, setError] = useState(null)
@@ -52,7 +47,7 @@ const Boards = () => {
 
   
   return (
-    <div className='flex'>
+    <div className='flex flex-col container  mx-auto p-4 md:flex-row md:flex-wrap md:p-6'>
       {
         documents?.pages.map(page => <Link to={`/pages/${page.id}`} key={page.id}><HomeCard  page={page}></HomeCard></Link>)
       }

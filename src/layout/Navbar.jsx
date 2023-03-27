@@ -16,18 +16,23 @@ const Navbar = () => {
       }
     }
   return (
-    <nav className="bg-neutral-900 p-4 flex justify-between items-center">
-      <Link to="/" className="text-white font-bold text-2xl">
-        note<span className="mx-0.5">·​</span>​e<span className="mx-0.5">·​</span>​fy
-      </Link>
+    <nav className=" bg-neutral-900 p-4 flex justify-between items-center">
+      <div>
+        <Link to="/" className="text-white font-bold text-2xl">
+          note<span className="mx-0.5">·​</span>​e<span className="mx-0.5">·​</span>​fy
+        </Link>
+      </div>
 
       <div className="flex items-center space-x-5">
 
 
-        {user ? <p className="text-green-400">({user.displayName})</p>:""}
-        {!user ? <span></span> : <AddPage/>}
-        
-        {!user ? <span></span> : <Link className="text-white" onClick={() => handleLogout()}><p className="mr-6">Logout</p></Link>}
+        {/* {user ? <p className="text-green-400">({user.displayName})</p>:""} */}
+        <div>
+          {!user ? <span></span> : <AddPage/>}
+        </div>
+        <div>
+          {!user ? <span></span> : <Link className="text-white" onClick={() => handleLogout()}><p className="mr-6">Logout</p></Link>}
+        </div>        
       </div>
     </nav>
   );
