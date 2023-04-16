@@ -5,7 +5,6 @@ import { projectFirestore } from '../firebase/config'
 const EditPage = ({page, user}) => {
   
   const handleEdit = async () =>{
-    // console.log(page.title, user.displayName);
     const editTitle = prompt("Enter Page title", page.title)
 
     if(editTitle !== page.title && editTitle){

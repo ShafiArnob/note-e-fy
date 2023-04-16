@@ -3,6 +3,7 @@ import { projectAuth } from "../firebase/config";
 import RequireAuth from "../firebase/RequireAuth";
 import Main from "../layout/Main";
 import Boards from "../pages/Boards";
+import Home from "../pages/Home/Home";
 import Login from "../pages/Login";
 import Page from "../pages/Page";
 import Signup from "../pages/Signup";
@@ -14,6 +15,10 @@ const routes = createBrowserRouter([
     path:"/",
     element:<Main></Main>,
     children:[
+      // {
+      //   path:"/",
+      //   element:!user ? <Home/> : <Navigate to="/pages"/>,
+      // },
       {
         path:"/",
         element:<RequireAuth><Boards/></RequireAuth>,
