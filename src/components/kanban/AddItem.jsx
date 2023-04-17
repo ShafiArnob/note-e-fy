@@ -7,7 +7,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 const AddItem = ({section, page}) => {
   const [collapse, setCollapse] = useState(false)
   const [item, setItem] = useState('')
-
+  // console.log(section);
   const addItem = (e) =>{
     e.preventDefault()   
     if(item){

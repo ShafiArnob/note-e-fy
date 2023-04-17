@@ -12,7 +12,7 @@ import EditPage from '../EditPage'
 
 const Kanban = ({page}) => {
   const [user, loading] = useAuthState(projectAuth)
-
+  // console.log(page);
   const onDragEnd = result =>{
     if (!result.destination) return
     const { source, destination } = result

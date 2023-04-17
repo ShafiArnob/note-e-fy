@@ -22,7 +22,7 @@ const KanbanCol = ({section,provided, page}) => {
 
       {/* kanban row tasks */}
       <div>
-        {section.tasks?.map((task, index)=>(<KanbanRow key={task.id} task={task} index={index} page={page} colId={section.id}></KanbanRow>))}
+        {section.tasks?.map((task, index)=>(<KanbanRow key={task.id} task={task} index={index} page={page} colId={section.id} section={section}></KanbanRow>))}
         {provided.placeholder}
       </div>
       <AddItem section={section} page={page}/>

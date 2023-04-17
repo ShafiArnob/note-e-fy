@@ -88,6 +88,7 @@ export const delItem = async(itemId, colId, page) =>{
   // Update
   const collRef = doc(projectFirestore,"pages",page.id)
   const res = await updateDoc(collRef, newPage)
+  console.log(res);
 }
 
 export const editCol = async(section, page) =>{
@@ -125,5 +126,44 @@ export const editItem = async(task, colId, page)=>{
     // Update
   const collRef = doc(projectFirestore,"pages",page.id)
   const res = await updateDoc(collRef, newPage)
+  }
+}
+const addItem = async(page, item, section) =>{  
+
+    // const section = 0
+    const selectedCol = page.kanban.find(col => col.id ===section)
+    const newPage = page.kanban.filter(col => col.id !== section)
+
+    selectedCol.tasks.push(item)
+    newPage.push(selectedCol)
+
+    page = {...page, kanban:newPage}
+
+    const collRef = doc(projectFirestore,"pages",page.id)
+    const res = await updateDoc(collRef, page)
+
+}
+
+
+export const changeColumn = async(fromColId, toColId, task, page, section) => {
+  // console.log("from ",fromColId,"To", toColId);
+  // await delItem(task.id, fromColId, page)
+  // await addItem(page, task, toColId)
+  if (!toColId) return
+  const { source, destination } = {source:fromColId, destination:toColId}
+  if (source !== destination) {
+      const sourceColIndex = page.kanban.findIndex(e => e.id === source)
+      const destinationColIndex = page.kanban.findIndex(e => e.id === destination)
+      
+      const sourceCol = page.kanban[sourceColIndex]
+      const destinationCol = page.kanban[destinationColIndex]
+      const sourceTask = [...sourceCol.tasks]
+      const destinationTask = [...destinationCol.tasks]
+      const [removed] = sourceTask.splice(source.index, 1)
+      destinationTask.splice(destination.index, 0, removed)
+      page.kanban[sourceColIndex].tasks = sourceTask
+      page.kanban[destinationColIndex].tasks = destinationTask
+      // console.log(page);
+      updateTask(page)
   }
 }
